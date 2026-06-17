@@ -1,0 +1,21 @@
+name: myenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=1.26.4
+  - pillow=11.3.0
+  - tqdm=4.67.1
+  - matplotlib=3.8.4
+  - scikit-learn=1.5.0
+  - nltk=3.8.1
+  - streamlit 
+
+  - pip:
+      - tensorflow==2.15.0
+      - tensorflow-io-gcs-filesystem==0.31.0
+      - opencv-python==4.10.0.82
+      - jupyter
+
