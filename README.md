@@ -1,4 +1,4 @@
-# Image Captioning App 🖼️✍️
+# Image Captioning App 
 
 An end-to-end Machine Learning web application that automatically generates descriptive text (captions) for any uploaded image.
 
