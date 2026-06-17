@@ -1,7 +1,6 @@
 # 🖼️ Image Captioning Model
 
 # Image Captioning App 
->>>>>>> 6ba75996df5e527d6e0c2aea59bcf708cfe85dc5
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00.svg)
