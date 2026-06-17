@@ -1,18 +1,60 @@
-# Image Captioning App 🖼️✍️
+# 🖼️ Image Captioning Model
 
-An end-to-end Machine Learning web application that automatically generates descriptive text (captions) for any uploaded image.
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00.svg)
+![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-D00000.svg)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-VGG16-green.svg)
+![NLP](https://img.shields.io/badge/NLP-LSTM-blue.svg)
 
-## Overview
-This project uses a deep learning architecture inspired by an Encoder-Decoder model to perform image captioning:
-1. **Encoder (VGG16):** A pre-trained CNN model is used to extract rich visual features from the uploaded image.
-2. **Decoder (LSTM/RNN):** A sequential model that takes the extracted image features and generates a descriptive natural language text sequence dynamically.
-3. **User Interface (Streamlit):** A clean and simple UI that allows users to easily upload images and view the generated captions in real-time.
+This project implements an **Image Captioning** system using deep learning techniques. The model generates descriptive textual captions for images by combining visual feature extraction and sequential text generation.
+
+---
+
+## 🏗️ Model Architecture
+
+The architecture utilizes an **Encoder-Decoder** approach to fuse image and text features:
+
+* **Encoder:** A pre-trained **CNN (VGG16)** is used to extract 4096-dimensional feature vectors from input images. Dense layers are then applied to process these features.
+* **Decoder:** An **LSTM** sequence model is used for caption generation, utilizing an embedding layer for text input and dense layers for output prediction.
+* **Optimization:** Compiled using Categorical Crossentropy loss and the Adam optimizer.
+
+---
+
+## 📝 Dataset
+
+This project uses the [Flickr8k Dataset](https://www.kaggle.com/datasets/adityajn105/flickr8k).
+
+| Detail | Value |
+|---|---|
+| Total Images | ~8,091 |
+| Total Captions | ~40,455 (~5 per image) |
+| Source | Kaggle |
+
+> **Note:** Due to size constraints, the raw dataset is **not included** in this repository. You can download it from [Google Drive](https://drive.google.com/drive/folders/1ByljBwnVCczz99eG74T3yEPDQWBGs--O) or from [Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k). Place it in the project root as `flickr8k/`.
+
+---
+
+## 🏷️ Key Features
+
+* Image-Text fusion with Encoder-Decoder (VGG16 + LSTM).
+* NLP preprocessing with NLTK (stopword removal, tokenization).
+* Batch-wise data generator for memory efficiency.
+* BLEU score evaluation (BLEU-1 ≈ 0.55, BLEU-2 ≈ 0.33).
+* Interactive **Streamlit** web app for real-time inference.
+
+---
+
+## � Example Output
+
+| Input Image | Generated Caption |
+|:---:|:---:|
+| ![Example Output](https://github.com/user-attachments/assets/4af38267-7db8-48a2-befd-af82a1db85d5) | *"little girl pigtails fingerpaints"* |
 
 ---
 
 ## 🛠️ Installation & Setup
 
-To run this project locally, it is highly recommended to use `conda` based on the provided `environment.yml` to recreate the exact environment without version conflicts.
+It is recommended to use `conda` based on the provided `environment.yml`.
 
 1. **Clone the repository:**
    ```bash
@@ -21,7 +63,6 @@ To run this project locally, it is highly recommended to use `conda` based on th
    ```
 
 2. **Create the Conda environment:**
-   This command will install Python and all required libraries (e.g., TensorFlow, Streamlit, Keras, etc.).
    ```bash
    conda env create -f environment.yml
    ```
@@ -35,7 +76,7 @@ To run this project locally, it is highly recommended to use `conda` based on th
 
 ## 🚀 How to Run the App
 
-1. Ensure you have the `working/` folder containing your trained model weights (`best_model.h5`) and the tokenizer features (`features.pkl`) within the project structure:
+1. Ensure you have the `working/` folder containing your trained model weights and tokenizer:
    ```
    📁 image captioning
    ├── 📄 app.py
@@ -51,17 +92,16 @@ To run this project locally, it is highly recommended to use `conda` based on th
    streamlit run app.py
    ```
 
-3. Open your browser and navigate to `http://localhost:8501`. Upload an image (`.jpg`, `.jpeg`, or `.png`) and the model will predict its caption in seconds!
+3. Open your browser at `http://localhost:8501`, upload an image, and the model will generate a caption!
 
 ---
 
-## 📸 Demo
-*(Note for the developer: Replace the text below with actual images or a GIF)*
+## � Activity Diagram
 
-Upload a screenshot of the UI running and displaying a generated text here:
-`![App Demo GIF/Image Placeholder](URL-to-your-GIF/Image)`
+📄 [View Activity Diagram (PDF)](activite.pdf)
 
 ---
 
-## 📊 Dataset Reference
-The model was trained using the well-known [Flickr8k Dataset](https://www.kaggle.com/datasets/adityajn105/flickr8k). *Because of its large size, the `flickr8k` images folder is excluded from this repository. If you plan to test or rerun the training notebook (`cls-project-image-captioning.ipynb`), you can download it from Kaggle and place it in the project root.*
+## � License
+
+This project is open-source and available under the MIT License.
