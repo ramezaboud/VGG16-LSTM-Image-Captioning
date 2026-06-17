@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # 🖼️ Image Captioning Model
-=======
+
 # Image Captioning App 
 >>>>>>> 6ba75996df5e527d6e0c2aea59bcf708cfe85dc5
 
